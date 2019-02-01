@@ -73,6 +73,7 @@ export default Component.extend({
   fromLabel: 'From',
   toLabel: 'To',
   hideAction: null,
+  showAction: null,
   applyAction: null,
   cancelAction: null,
   autoUpdateInput: true,
@@ -190,6 +191,10 @@ export default Component.extend({
 
     this.$('.daterangepicker-input').on('hide.daterangepicker', (ev, picker) => {
       this.handleDateRangePickerEvent('hideAction', picker);
+    });
+
+    this.$('.daterangepicker-input').on('show.daterangepicker', (ev, picker) => {
+      this.handleDateRangePickerEvent('showAction', picker);
     });
 
     this.$('.daterangepicker-input').on('cancel.daterangepicker', () => {
